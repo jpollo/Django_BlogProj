@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block staticblock %}
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/main.css' %}"/>
+{#    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>#}
+    <script type="text/javascript" src="{% static 'assets/3rd/semantic/semantic.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/3rd/semantic/semantic.min.css' %}"/>
+{% endblock %}
+
+{% block nav %}
+
+        <div class="ui centered grid menu-bar">
+            <div class="eight wide column menu-bar ">
+                <div class="ui padded grid menu-bar">
+{#                    <div class="row">#}
+                                            <div class="four wide column menu-bar "> <span class="menu-item yellow">BLog</span> </div>
+                                            <div class="four wide column menu-bar"><span class="menu-item red ">Archive</span> </div>
+                                            <div class="four wide column menu-bar"> <span class="menu-item purple">About</span></div>
+                                            <div class="four wide column menu-bar"> <span class="menu-item green">Download</span> </div>
+
+{#                    </div>#}
+                </div>
+            </div>
+        </div>
+
+{#<div class="ui menu">#}
+{#  <a class="active green item">#}
+{#    <i class="home icon"></i> Green#}
+{#  </a>#}
+{#  <a class="red item">#}
+{#    <i class="mail icon"></i> Red#}
+{#  </a>#}
+{#  <a class="blue item">#}
+{#    <i class="user icon"></i> Blue#}
+{#  </a>#}
+{#  <a class="orange item">#}
+{#    <i class="home icon"></i> Orange#}
+{#  </a>#}
+{#  <a class="purple item">#}
+{#    <i class="mail icon"></i> Purple#}
+{#  </a>#}
+{#  <a class="teal item">#}
+{#    <i class="user icon"></i> Teal#}
+{#  </a>#}
+{#</div>#}
+
+{% endblock %}

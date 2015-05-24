@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block metadata %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Shen Jie HomePage">
+    <meta name="author" content="Shen Jie">
+{#    <link rel="icon" href="../../favicon.ico">#}
+{% endblock metadata %}
+
+{% block staticblock %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/test_boot3.css' %}"/>
+
+    <script type="text/javascript" src="{% static 'assets/3rd/bootstrap/js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/3rd/bootstrap/css/bootstrap-theme.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/3rd/bootstrap/css/bootstrap.min.css' %}"/>
+
+{% endblock staticblock %}
+
+{% block nav %}
+    <div class="row">
+        <div class="col-md-2 col-md-offset-3 menu-item "> <a href="">Home</a> </div>
+        <div class="col-md-2 menu-item"><a href="">Archive</a></div>
+        <div class="col-md-2 menu-item"><a href="">About</a></div>
+
+    </div>
+{% endblock %}
+
+{% block main %}
+    Hello World!
+{% endblock %}
+
+
+{% block footer %}
+    <div class="container">
+
+    </div>
+{% endblock %}

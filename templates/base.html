@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    {% block metadata %}
+
+    {% endblock %}
+
+    <title>
+        {% block titleblock %} {% endblock %}
+    </title>
+
+    {% block staticblock %}
+
+    {% endblock  %}
+
+</head>
+<body>
+    <div id="wrap">
+        <div id="nav">
+            {% block nav %}
+            {% endblock  %}
+        </div>
+
+        <div id="main-frame">
+            {% block main %}
+            {% endblock  %}
+        </div>
+    </div>
+
+    <div id="footer">
+        {% block footer %}
+
+        {% endblock  %}
+    </div>
+
+</body>
+</html>

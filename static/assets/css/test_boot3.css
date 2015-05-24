@@ -1,0 +1,57 @@
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+#nav {
+    /*font-family: 'Roboto', sans-serif;*/
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-top: 1em;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+}
+
+.green {
+    background-color: #008375;
+}
+
+.green:hover {
+    /*border-bottom-width: medium;*/
+    /*border-bottom-color: #101010;*/
+}
+
+
+
+.green2 {
+    background-color: #4c467a;
+}
+
+#footer {
+    background-color: mediumseagreen;
+    height: 80px;
+
+}
+
+
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -80px;
+  /* Pad bottom by footer height */
+  padding: 0 0 80px;
+}
+
+#main-frame {
+
+    padding-top: 2em;
+}
