@@ -7,7 +7,6 @@ from django.utils import timezone
 upload_dir = 'content/BlogPost/%s/%s'
 
 
-
 def get_upload_md_name(self, filename):
     year = self.pub_date.year
     upload_to = upload_dir % (year, self.title + '.md')
@@ -15,12 +14,13 @@ def get_upload_md_name(self, filename):
 
 
 def get_html_name(self, filename):
-    year = self.pub_date.year;
+    year = self.pub_date.year
     upload_to = upload_dir % (year, filename)
     return upload_to
 
 
 class BlogPost(models.Model):
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=150)
     body = models.TextField(blank=True)
     md_file = models.FileField(upload_to=get_upload_md_name, blank=True)
@@ -45,4 +45,10 @@ class Book(models.Model):
     author = models.ManyToManyField(Author)
     publisher = models.ForeignKey(Publisher)
     publication_date = models.DateField()
+
+
+class BlogCategory(models.Model):
+    category_id = models.AutoField(primary_key=True)
+    category_name = models.CharField(max_length=20)
+    blog_id = models.CharField(max_length=30)
 
