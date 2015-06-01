@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+    {% for blogpost in blogposts %}
+        <article>
+            <div class="post">
+                {{  blogpost.display_html }}
+            </div>
+        </article>
+    {% endfor %}
+
+{% endblock content %}

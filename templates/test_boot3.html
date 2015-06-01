@@ -30,8 +30,16 @@
     </div>
 {% endblock %}
 
-{% block main %}
-    Hello World!
+{% block content %}
+ {% for blogpost in blogposts %}
+        <article>
+            <div class="post">
+                {% autoescape off %}
+                {{  blogpost.display_html }}
+                {% endautoescape %}
+            </div>
+        </article>
+    {% endfor %}
 {% endblock %}
 
 
