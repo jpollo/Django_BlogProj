@@ -5,3 +5,12 @@
 #### Preparation
 sudo pip install MySQL-python
 sudo pip install south
+
+
+
+### 模板层次
+base
+blog_base
+home | articel | about | archive
+
+

@@ -33,9 +33,18 @@
 {% block content %}
  {% for blogpost in blogposts %}
         <article>
-            <div class="post">
+            <div class="post_article">
                 {% autoescape off %}
-                {{  blogpost.display_html }}
+                      <p class="post_meta">
+                        <span class="year">{{ blogpost.pub_date.year}}  </span>
+                        <span class="month">{{ blogpost.pub_date|date:"M"}}  </span>
+                        <span class="day">{{ blogpost.pub_date.day}}  </span>
+                      </p>
+
+                    <h1></ht><a href="{{ blogpost.get_absolute_url }}">{{ blogpost.title }}</a></h1>
+
+                    {{  blogpost.display_html }}
+
                 {% endautoescape %}
             </div>
         </article>

@@ -31,7 +31,6 @@
 {% endblock %}
 
 {% block content %}
- {% for blogpost in blogposts %}
         <article>
             <div class="post_article">
                 {% autoescape off %}
@@ -41,14 +40,13 @@
                         <span class="day">{{ blogpost.pub_date.day}}  </span>
                       </p>
 
-                    <h1></ht><a href="{{ blogpost.get_absolute_url }}">{{ blogpost.title }}</a></h1>
+                    <h1>{{ blogpost.title }}</h1>
 
                     {{  blogpost.display_html }}
 
                 {% endautoescape %}
             </div>
         </article>
-    {% endfor %}
 {% endblock %}
 
 

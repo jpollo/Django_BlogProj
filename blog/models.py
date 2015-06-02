@@ -28,7 +28,7 @@ class BlogPost(models.Model):
         print "get html name %s"%upload_to
         return upload_to
 
-    #id = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=150)
     body = models.TextField(blank=True)
     md_file = models.FileField(upload_to=get_upload_md_name, blank=True)
@@ -73,8 +73,18 @@ class BlogPost(models.Model):
         print "display html: %s"%self.html_file
         with open(self.html_file.path) as f:
         # with open(self.html_file.path, encoding='utf-8') as f:
-            print "print display html"
+            #print "print display html"
             html_content = f.read()
-            print html_content
+            #print html_content
             return html_content
+
+    def get_absolute_url(self):
+        print("enter func get url")
+        print self.slug
+        print ("exit func get url")
+        return "%s%s" % (self.pub_date.strftime("%Y/%m/%d/"), self.slug)
+
+    def __str__(self):
+        print "BlogBost"
+
 
