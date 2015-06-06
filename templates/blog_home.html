@@ -1,0 +1,26 @@
+{% extends 'blog_base.html' %}
+
+{% block content %}
+ {% for blogpost in blogposts %}
+        <article>
+            <div class="post_article">
+                {% autoescape off %}
+                      <p class="post_meta">
+                        <span class="year">{{ blogpost.pub_date.year}}  </span>
+                        <span class="month">{{ blogpost.pub_date|date:"M"}}  </span>
+                        <span class="day">{{ blogpost.pub_date.day}}  </span>
+                      </p>
+
+                    <h1></ht><a href="{{ blogpost.get_absolute_url }}">{{ blogpost.title }}</a></h1>
+
+                    {{  blogpost.display_html }}
+                    <div class="article_meta">
+                        category: {{ blogpost.getcategory }}<br>
+                        tags:{{ blogpost.gettags }}
+                    </div>
+
+                {% endautoescape %}
+            </div>
+        </article>
+    {% endfor %}
+{% endblock %}

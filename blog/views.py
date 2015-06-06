@@ -18,10 +18,11 @@ def home(request):
     args = dict()
     args['blogposts'] = BlogPost.objects.exclude(title__in=exclude_posts).order_by('-pub_date')
     # return render(request, 'blog_base.html', args)
-    return render(request, 'test_boot3.html', args)
+    # return render(request, 'test_boot3.html', args)
+    return render(request, 'blog_home.html', args)
 
 
-def blogpost_new(request, year, month, day, slug):
+def blog_article(request, year, month, day, slug):
     print "enter blogpost new"
     value = datetime.datetime(int(year), int(month), int(day))
     print value
@@ -37,4 +38,4 @@ def blogpost_new(request, year, month, day, slug):
     else:
         # print(""+ entry)
         args = {'blogpost': entry[0]}
-        return render(request, 'article.html', args)
+        return render(request, 'blog_article.html', args)

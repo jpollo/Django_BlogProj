@@ -1,0 +1,21 @@
+{% extends 'blog_base.html' %}
+
+
+{% block content %}
+        <article>
+            <div class="post_article">
+                {% autoescape off %}
+                      <p class="post_meta">
+                        <span class="year">{{ blogpost.pub_date.year}}  </span>
+                        <span class="month">{{ blogpost.pub_date|date:"M"}}  </span>
+                        <span class="day">{{ blogpost.pub_date.day}}  </span>
+                      </p>
+
+                    <h1>{{ blogpost.title }}</h1>
+
+                    {{  blogpost.display_html }}
+
+                {% endautoescape %}
+            </div>
+        </article>
+{% endblock %}

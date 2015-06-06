@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import south
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -63,13 +64,14 @@ DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.mysql',
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'blog.db',
+        'NAME': 'blog3.db',
         'USER': '',
         'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '',
     }
 }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/

@@ -35,10 +35,11 @@ a {
     background-color: #4c467a;
 }
 
+
 #footer {
     background-color: mediumseagreen;
     height: 80px;
-
+    /*height: 3em;*/
 }
 
 
@@ -50,6 +51,7 @@ a {
   /* Pad bottom by footer height */
   padding: 0 0 80px;
 }
+
 
 #main-frame {
 
