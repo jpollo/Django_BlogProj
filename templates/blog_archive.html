@@ -1,0 +1,32 @@
+{% extends 'blog_base.html' %}
+
+
+{% block content %}
+    {% autoescape off %}
+
+
+        <div id="blog-archives">
+            {% for year, blogposts in posts_by_year %}
+
+                <h2>{{ year }}</h2>
+                {% for blogpost in blogposts %}
+                    <article>
+                        <h1><a href="{{ blogpost.get_absolute_url }}"
+                               class="archive_title">{{ blogpost.title }}</a></h1>
+{#                        <time datetime="{{ blogpost.pub_date }}">#}
+{#                            <span class="month"> {{ blogpost.pub_date|date:"M"|upper }}</span>#}
+{#                            <span class="day">{{ blogpost.pub_date.day }}</span>#}
+{#                        </time>#}
+{#                        <footer class="categories">#}
+{#                            <span class="post_desc">posted in</span> <a class="category" href=""><span#}
+{#                                class="post_desc_category">{{ blogpost.category }}</span></a>#}
+{#                        </footer>#}
+                    </article>
+                {% endfor %}
+            {% endfor %}
+        </div>
+
+
+
+    {% endautoescape %}
+{% endblock %}
