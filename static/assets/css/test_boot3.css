@@ -1,8 +1,20 @@
 html,
 body {
-  height: 100%;
+    clear: both;
+    height: 100%;
   /* The html and body elements cannot have any padding or margin. */
+    background-color: #e8e8e8;
+    /*font-family: "Microsoft YaHei" ! important;*/
 }
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 
 #nav {
     /*font-family: 'Roboto', sans-serif;*/
@@ -38,7 +50,7 @@ a {
 
 #footer {
     background-color: mediumseagreen;
-    height: 80px;
+    height: 8em;
     /*height: 3em;*/
 }
 
@@ -47,13 +59,25 @@ a {
   min-height: 100%;
   height: auto;
   /* Negative indent footer by its height */
-  margin: 0 auto -80px;
+  margin: 0 auto -8em;
   /* Pad bottom by footer height */
-  padding: 0 0 80px;
+  padding: 0 0 8em;
 }
 
 
 #main-frame {
 
     padding-top: 2em;
+    /*background-color: white;*/
+}
+
+.post_article {
+    background-color: white;
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+.blog_footer {
+    text-align: center;
 }
