@@ -3,8 +3,10 @@ body {
     clear: both;
     height: 100%;
   /* The html and body elements cannot have any padding or margin. */
-    background-color: #e8e8e8;
+    /*background-color: #e8e8e8;*/
+    background-color: #e9eaed;
     /*font-family: "Microsoft YaHei" ! important;*/
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,STHeiti,"Microsoft Yahei",sans-serif;
 }
 
 a {
@@ -49,9 +51,11 @@ a {
 
 
 #footer {
-    background-color: mediumseagreen;
-    height: 8em;
+    /*background-color: mediumseagreen;*/
+    background-color: #4d4d4d;
+    height: 3.5em;
     /*height: 3em;*/
+    text-align: center;
 }
 
 
@@ -59,25 +63,142 @@ a {
   min-height: 100%;
   height: auto;
   /* Negative indent footer by its height */
-  margin: 0 auto -8em;
+  margin: 0 auto -3.5em;
   /* Pad bottom by footer height */
-  padding: 0 0 8em;
+  padding: 0 0 3.5em;
 }
 
 
 #main-frame {
-
     padding-top: 2em;
     /*background-color: white;*/
 }
 
+
+.post_article_title {
+    color: #000000;
+}
+
 .post_article {
     background-color: white;
-    width: 70%;
+    width: 60%;
     margin: 0 auto;
+    /*like facebook style*/
+    border:  1px solid;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    -webkit-border-radius: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.post_article h1 {
+    margin-top: 0px;
+}
+
+.post_article_meta {
+    color: #999999;
+}
+
+.post_article_meta .year {
+    font-size: 1.1em;
+    margin-right: 0.3em;
+}
+.post_article_meta .month {
+    font-size: 0.8em;
+}
+
+.blog_article_meta .day {
+    font-size: 0.8em;
 }
 
 
-.blog_footer {
+.post_article_title:hover,
+.post_article_title:focus
+{
+    text-decoration: none;
+}
+
+.post_article_title{
+    font-size: 1.2em;
+}
+
+article .post_article_content {
+     margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.post_tag {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    padding-left: 5px;
+}
+
+ul.post_tag_list {
+    display: inline-block;
+    list-style: none;
+}
+
+.post_tag_item {
+    font-size: .9em;
+    height: 30px;
+    line-height: 30px;
+
     text-align: center;
+    vertical-align: middle;
+    background-color: #a6a6a6;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    padding-left: 12px;
+    padding-right: 12px;
+
+    border-left: 1px solid #e0e0e0;
+    border-left:1px solid #e0e0e0;
+    border-top:1px solid #e0e0e0;
+    border-right:1px solid #e0e0e0;
+    border-bottom:1px solid #e0e0e0;
+
+    box-shadow: 2px 1px 2px rgba(0,0,0,.1);
+
+    margin-right: 10px;
+
+    /*圆角*/
+    border-radius: 3px;
+}
+
+.tag_img {
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+
+
+/*.blog_footer {*/
+    /*text-align: center;*/
+    /*color: #999;*/
+/*}*/
+
+.social_img {
+
+}
+
+
+.social_img img {
+    /*display: table-cell;*/
+    /*position:absolute;*/
+    /*top: 50%;*/
+    /*padding-top: 1em;*/
+    margin-top: 1em;
+    display: inline-block;
+    height: 1.5em;
+    /*line-height: 1.5em;*/
+    margin-right: 2em;
+    /*vertical-align: middle;*/
+}
+
+.sep10 {
+    height: 10px;
 }

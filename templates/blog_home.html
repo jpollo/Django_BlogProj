@@ -1,22 +1,32 @@
 {% extends 'blog_base.html' %}
+{% load staticfiles %}
 
 {% block content %}
  {% for blogpost in blogposts %}
         <article>
             <div class="post_article">
                 {% autoescape off %}
-                      <p class="post_meta">
+                      <p class="post_article_meta">
                         <span class="year">{{ blogpost.pub_date.year}}  </span>
                         <span class="month">{{ blogpost.pub_date|date:"M"}}  </span>
                         <span class="day">{{ blogpost.pub_date.day}}  </span>
                       </p>
 
-                    <h1></ht><a href="{{ blogpost.get_absolute_url }}">{{ blogpost.title }}</a></h1>
-
-                    {{  blogpost.display_html }}
-                    <div class="article_meta">
-                        category: {{ blogpost.getcategory }}<br>
-                        tags:{{ blogpost.gettags }}
+                    <h1><a class="post_article_title" href="{{ blogpost.get_absolute_url }}">{{ blogpost.title }}</a></h1>
+                    <div class="post_article_content">
+                        {{  blogpost.display_html }}
+                    </div>
+                    <div class="post_tag">
+                        <img src="{% static 'assets/img/tag.png' %}" class="tag_img" height=30px alt=""/>
+{#                        category: {{ blogpost.getcategory }}<br>#}
+{#                        tags:{{ blogpost.gettags }}#}
+                        {% for tag in blogpost.gettags %}
+                            <ul class="post_tag_list">
+                                <li class="post_tag_item">
+                                   {{ tag }}
+                                </li>
+                            </ul>
+                        {% endfor %}
                     </div>
 
                 {% endautoescape %}

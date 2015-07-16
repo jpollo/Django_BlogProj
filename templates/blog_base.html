@@ -40,9 +40,24 @@
 Footer
 #}
 {% block footer %}
-    <div class="blog_footer">
-        <p>www.jpollo.com</p>
-        <p>&copy;2015 All rights reserved</p>
+{#    <div class="blog_footer">#}
+{#        <div class="sep10">#}
 
-    </div>
+{#        </div>#}
+{#        <div class="content">#}
+
+{#        <p>www.jpollo.com</p>#}
+{#        <p>&copy;2015 All rights reserved</p>#}
+{#        </div>#}
+{#        <div class="sep10">#}
+{#        </div>#}
+        <div class="social_img">
+            <img src="{% static 'assets/img/social/github.png' %}" alt=""/>
+            <img src="{% static 'assets/img/social/facebook.png' %}" alt=""/>
+            <img src="{% static 'assets/img/social/twitter.png' %}" alt=""/>
+            <img src="{% static 'assets/img/social/linkedin.png' %}" alt=""/>
+
+        </div>
+
+{#    </div>#}
 {% endblock %}

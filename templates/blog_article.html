@@ -12,8 +12,9 @@
                       </p>
 
                     <h1>{{ blogpost.title }}</h1>
-
-                    {{  blogpost.display_html }}
+                    <div class="blog_article_content">
+                        {{  blogpost.display_html }}
+                    </div>
 
                 {% endautoescape %}
             </div>
