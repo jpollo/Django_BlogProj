@@ -1,0 +1,32 @@
+{% extends 'blog_base.html' %}
+{% load staticfiles %}
+
+
+{% block staticblock %}
+    {{ block.super }}
+      <script src="markdown-it.js"></script>
+    <script src="{% static 'assets/3rd/markdown_editor/js/bootstrap-markdown.js' %}"></script>
+
+
+    <link rel="stylesheet" href="{% static 'assets/3rd/markdown_editor/css/bootstrap-markdown.min.css' %}">
+
+
+{% endblock %}
+
+
+
+
+{% block content %}
+<div id="publish_form">
+    <form>
+    <input name="title" type="text" placeholder="Title?" />
+    <textarea name="content" data-provide="markdown" rows="20"></textarea>
+    <label class="checkbox">
+      <input name="publish" type="checkbox"> Publish
+    </label>
+    <hr/>
+    <button type="submit" class="btn">Submit</button>
+  </form>
+</div>
+
+{% endblock %}

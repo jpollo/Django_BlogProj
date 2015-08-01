@@ -66,6 +66,12 @@ def blog_archive(request):
     return render(request, 'blog_archive.html', args)
 
 
+def blog_publish(request):
+    args = dict()
+    return render(request, 'publish_page/publish.html', args)
+
+
+
 class UserForm(forms.Form):
     username = forms.CharField(label='用户名', max_length=50)
     password = forms.CharField(label='密码',  widget=forms.PasswordInput())
