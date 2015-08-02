@@ -4,8 +4,12 @@
 
 {% block staticblock %}
     {{ block.super }}
-      <script src="markdown-it.js"></script>
+
+
+    <script src="{% static 'assets/3rd/markdown_editor/js/markdown.js' %}"></script>
+    <script src="{% static 'assets/3rd/markdown_editor/js/to-markdown.js' %}"></script>
     <script src="{% static 'assets/3rd/markdown_editor/js/bootstrap-markdown.js' %}"></script>
+{#    <script src="{% static 'assets/3rd/markdown_editor/js/markdown_editor_cust.js' %}"></script>#}
 
 
     <link rel="stylesheet" href="{% static 'assets/3rd/markdown_editor/css/bootstrap-markdown.min.css' %}">
