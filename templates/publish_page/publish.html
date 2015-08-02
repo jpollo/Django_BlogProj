@@ -13,6 +13,7 @@
 
 
     <link rel="stylesheet" href="{% static 'assets/3rd/markdown_editor/css/bootstrap-markdown.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/3rd/markdown_editor/css/markdown_editor_cust.css' %}">
 
 
 {% endblock %}
@@ -21,16 +22,61 @@
 
 
 {% block content %}
-<div id="publish_form">
+    <div id="publish_editor">
     <form>
-    <input name="title" type="text" placeholder="Title?" />
+
+
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="">Blog title</label>
+                <input type="text" placeholder="blog title"/>
+            </div>
+        </form>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="">Blog Category</label>
+                <input type="text" placeholder="blog category"/>
+            </div>
+        </form>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="">Blog Tags</label>
+                <input type="text" placeholder="blog tags"/>
+            </div>
+        </form>
+
+        <div class="control-group">
+            <label class="control-label">性别：</label>
+
+            <div class="controls">
+                <label class="radio">
+                    <input type="radio" name="sex" id="optionsRadios1" value="option1" checked>
+                    男</label>
+                <label class="radio">
+                    <input type="radio" name="sex" id="optionsRadios2" value="option2">
+                    女</label>
+            </div>
+        </div>
+
+
+        <input id="form_title" name="title" type="text" placeholder="Title?"/>
     <textarea name="content" data-provide="markdown" rows="20"></textarea>
-    <label class="checkbox">
-      <input name="publish" type="checkbox"> Publish
-    </label>
-    <hr/>
-    <button type="submit" class="btn">Submit</button>
-  </form>
+        {#    <label class="checkbox">#}
+        {#      <input name="publish" type="checkbox"> Publish#}
+        {#    </label>#}
+        {#    <hr/>#}
+        {#    <button type="submit" class="btn">Submit</button>#}
+
+        <label class="radio-inline">
+            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 草稿
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 发布
+        </label>
+        <br>
+        <button type="submit" class="btn btn-primary">Publish</button>
+
+    </form>
 </div>
 
 {% endblock %}
