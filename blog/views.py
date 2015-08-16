@@ -9,6 +9,10 @@ from models import User
 from django.shortcuts import render,render_to_response
 from django.http import HttpResponse,HttpResponseRedirect
 from django.template import RequestContext
+from forms import BlogPublishForm
+
+from django.http import HttpResponseRedirect
+from django.template import RequestContext
 
 # Create your views here.
 
@@ -69,6 +73,17 @@ def blog_archive(request):
 def blog_publish(request):
     args = dict()
     return render(request, 'publish_page/publish.html', args)
+
+def blog_add(request):
+    print "enter blog_add view func:"
+    if request.method == 'POST':
+        post_form = BlogPublishForm(request.POST)
+        print "blog_add post is %s" % post_form
+    form = BlogPublishForm()
+    # return render(request, 'publish_page/pform.html', {'form': form})
+    # return render(context_instance=RequestContext(request), 'publish_page/pform.html', {'form': form})
+    # context_instance=RequestContext(req)
+    return render_to_response('publish_page/pform.html', {'form': form}, context_instance=RequestContext(request))
 
 
 

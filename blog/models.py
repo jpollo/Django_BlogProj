@@ -8,6 +8,7 @@ import os
 from django.template.defaultfilters import slugify
 import markdown
 from django.core.files.base import ContentFile
+from django import forms
 
 # sys.setdefaultencoding('utf8')
 
@@ -108,6 +109,9 @@ class User(models.Model):
 
     def __unicode__(self):
         return self.username
+
+
+
 
 
 

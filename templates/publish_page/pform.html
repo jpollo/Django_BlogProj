@@ -1,0 +1,30 @@
+{% extends 'blog_base.html' %}
+{% load staticfiles %}
+
+
+{% block staticblock %}
+    {{ block.super }}
+      <script src="markdown-it.js"></script>
+    <script src="{% static 'assets/3rd/markdown_editor/js/bootstrap-markdown.js' %}"></script>
+
+
+    <link rel="stylesheet" href="{% static 'assets/3rd/markdown_editor/css/bootstrap-markdown.min.css' %}">
+
+
+{% endblock %}
+
+
+
+
+{% block content %}
+<div id="publish_form">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.title }}
+        {{ form.content }}
+        <button type="submit" class="btn">Submit</button>
+{#        <input type="submit" name="submit" value="提交"/>#}
+  </form>
+</div>
+
+{% endblock %}

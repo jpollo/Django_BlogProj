@@ -19,3 +19,12 @@ home | articel | about | archive
 
 
 
+### QA
+##### CSRF verification failed. Request aborted  
+   ``` 
+   <form method="post">
+        {% csrf_token %}
+    return render_to_response('publish_page/pform.html', {'form': form}, context_instance=RequestContext(request))
+    ```
+
+
