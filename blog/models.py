@@ -103,6 +103,19 @@ class BlogPost(models.Model):
         return self.title
 
 
+class SimpleBlogPost(models.Model):
+    title = models.CharField(max_length=150)
+    content = models.TextField(blank=True)
+    category = models.CharField(max_length=30)
+    status = models.CharField(max_length=30)
+    html_file = models.FileField(upload_to='simple_blog_dir', blank=True)
+    pub_date = models.DateTimeField('date published', default=timezone.now())
+    last_edit_date = models.DateTimeField('date last edit', default=timezone.now())
+
+    def __str__(self):
+        return self.title
+
+
 class User(models.Model):
     username = models.CharField(max_length=50)
     password = models.CharField(max_length=50)
@@ -110,6 +123,52 @@ class User(models.Model):
     def __unicode__(self):
         return self.username
 
+
+class Category(models.Model):
+    category_code = models.CharField(max_length=50)
+    category_name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.category_code
+
+
+def save_blog(blog_title, blog_content, blog_category, blog_status):
+    print "enter save blog"
+    try:
+        print "filter blog by title %s" % blog_title
+        found = SimpleBlogPost.objects.get(title=blog_title)
+        if found:
+            update_blog(blog_title, blog_content, blog_category, blog_status)
+        else:
+            print "can not find simple blog"
+    except SimpleBlogPost.DoesNotExist:
+        print "not found with post title, so add this blog"
+        add_blog(blog_title, blog_content, blog_category, blog_status)
+
+    # blog = SimpleBlogPost(title=blog_title, content=blog_content, category=blog_category, status=blog_status)
+    # blog.save()
+    # if blog_content:
+    #     r = markdown.markdown(blog_content, ['codehilite'])
+    #     filename = blog_title + ".html"
+    #     blog.html_file.save(filename, ContentFile(r), save=True)
+    #     blog.html_file.close()
+
+    print "exit save blog"
+
+
+def add_blog(blog_title, blog_content, blog_category, blog_status):
+    print "add a post blog"
+    blog = SimpleBlogPost(title=blog_title, content=blog_content, category=blog_category, status=blog_status)
+    blog.save()
+    if blog_content:
+        r = markdown.markdown(blog_content, ['codehilite'])
+        filename = blog_title + ".html"
+        blog.html_file.save(filename, ContentFile(r), save=True)
+        blog.html_file.close()
+
+
+def update_blog(blog_title, blog_content, blog_category, blog_status):
+    print "update a post blog"
 
 
 

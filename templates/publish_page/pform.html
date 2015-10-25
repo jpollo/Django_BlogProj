@@ -22,6 +22,8 @@
         {% csrf_token %}
         {{ form.title }}
         {{ form.content }}
+        {{ form.category }}
+        {{ form.status }}
         <button type="submit" class="btn">Submit</button>
 {#        <input type="submit" name="submit" value="提交"/>#}
   </form>
